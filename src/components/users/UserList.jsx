@@ -1,35 +1,23 @@
-import {useEffect, useState} from 'react'
+import {useEffect, useState, useContext} from 'react'
 import Spinner from '../../images/Spinner'
+import UserTab from './UserTab'
+import GitContext from '../../context/GitContext'
 
 const UserList = () => {
-    const [userData, getUserData] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
+    const {data, isLoading, gitData} = useContext(GitContext)
+    console.log(data)
 
     useEffect(()=>{
-        fetchData()
-    }, [])
-
-    const  fetchData = async()=>{
-        const response = await fetch(`${process.env.REACT_APP_GITHUB_URL}/users`, {
-            headers: {
-                Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN }`
-            }
-        })
-
-        const data = await response.json()
-
-        getUserData(data)
-        setIsLoading(false)
-        
-    }
-
-    console.log(userData)
+        gitData()
+     }, [])
+    
+ 
     
     return isLoading ? <Spinner/> : (<div className="grid grid-cols-1 gap-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2">
         
-        {userData.map((data)=>
+        {data.map((data)=>
             (
-                <h3 key={data.id}>{data.login}</h3>
+                <UserTab key={data.id} data={data} />
             )
         )}
         
