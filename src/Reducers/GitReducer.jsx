@@ -3,7 +3,18 @@ const GitReducer = (state, action) => {
         return action.payLoad
     }else if(action.type === "loading") {
         return state.isLoading
-    } else {
+    }else if(action.type === 'stop loading'){
+        return {...state, isLoading: false}
+    } else if(action.type === "start loading"){
+        return {
+            ...state, isLoading: true
+        }
+    }else if (action.type === 'clear search'){
+        return {
+            ...state,
+            items: []
+        }
+    }else {
         return state
     }
 }

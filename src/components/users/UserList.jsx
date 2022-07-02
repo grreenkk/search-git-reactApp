@@ -4,12 +4,11 @@ import UserTab from './UserTab'
 import GitContext from '../../context/GitContext'
 
 const UserList = () => {
-    const {data, isLoading, gitData} = useContext(GitContext)
-    console.log(data)
+    const {data, isLoading, searchUsers, loadingControl} = useContext(GitContext)
 
-    useEffect(()=>{
-        gitData()
-     }, [])
+    // useEffect(()=>{
+    //     searchUsers()
+    //  }, [])
     
  
     
