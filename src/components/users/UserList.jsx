@@ -6,6 +6,8 @@ import GitContext from '../../context/GitContext'
 const UserList = () => {
     const {data, isLoading, searchUsers, loadingControl} = useContext(GitContext)
 
+    console.log(data)
+
     // useEffect(()=>{
     //     searchUsers()
     //  }, [])

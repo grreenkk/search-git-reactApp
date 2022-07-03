@@ -1,6 +1,6 @@
 const GitReducer = (state, action) => {
     if(action.type === "get data") {
-        return action.payLoad
+        return {...state, items: action.payLoad.items, isLoading: false}
     }else if(action.type === "loading") {
         return state.isLoading
     }else if(action.type === 'stop loading'){
@@ -14,7 +14,19 @@ const GitReducer = (state, action) => {
             ...state,
             items: []
         }
-    }else {
+    }else if (action.type === 'get user') {
+        return {
+            ...state,
+            user: action.payLoad,
+            isLoading: false
+        }
+    }else if(action.type="get repos"){
+        return {
+            ...state,
+            repos: action.payLoad
+        }
+
+    }else{
         return state
     }
 }

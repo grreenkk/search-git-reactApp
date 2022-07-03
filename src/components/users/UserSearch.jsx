@@ -1,4 +1,3 @@
-import { toBeEmptyDOMElement } from '@testing-library/jest-dom/dist/matchers'
 import {useState, useContext} from 'react'
 import GitContext from '../../context/GitContext'
 import AlertContext from '../../context/AlertContext'

@@ -7,6 +7,7 @@ import NotFound from './pages/NotFound';
 import {GitContextProvider} from './context/GitContext'
 import {AlertProvider} from './context/AlertContext'
 import UserAlert from './components/users/UserAlert';
+import User from './components/users/User';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Home/>} />
               <Route path='/about' element={<About/>} />
-              <Route path='/user' element={<User />}
+              <Route path='/user/:login' element={<User />} />
               <Route path='/notfound' element={<NotFound/>} />
               <Route path='/*' element={<NotFound/>} />
             </Routes>
