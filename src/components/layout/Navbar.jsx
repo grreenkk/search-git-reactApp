@@ -16,7 +16,6 @@ const Navbar = ({title}) => {
                     <div className="flex justify-end">
                         <Link to='/' className="btn btn-ghost btn-sm rounded-btn">Home</Link>
                         <Link to='/about' className="btn btn-ghost btn-sm rounded-btn">About</Link>
-                        <Link to='/notfound' className="btn btn-ghost  btn-sm rounded-btn">NotFound</Link>
                     </div>
                </div>
             </div>
